@@ -15,7 +15,7 @@ function notify_message(title, subtitle, message, icon){
 elixir.extend('Bower', function(options, dest){
 
     var defaultOptions = {};
-    var defaultDest    = {};
+    var defaultDest    = null;
 
     options = options || defaultOptions;
     dest = dest || defaultDest;
@@ -32,9 +32,13 @@ elixir.extend('Bower', function(options, dest){
 
             this.emit('end');
         }
-
-            return bower(options)
-                .pipe(gulp.dest(dest));
+            if(dest != null){
+                return bower(options)
+                .pipe(gulp.dest(dest));    
+            }else{
+                return bower(options);
+            }
+            
         });
 
     return this.queueTask("Bower");
