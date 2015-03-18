@@ -12,11 +12,13 @@ function notify_message(title, subtitle, message, icon){
     }));
 }
 
-elixir.extend('Bower', function(options){
+elixir.extend('Bower', function(options, dest){
 
     var defaultOptions = {};
+    var defaultDest    = {};
 
     options = options || defaultOptions;
+    dest = dest || defaultDest;
 
     gulp.task('Bower', function(){
 
@@ -32,7 +34,7 @@ elixir.extend('Bower', function(options){
         }
 
             return bower(options)
-                .pipe(gulp.dest('lib/'));
+                .pipe(gulp.dest(dest));
         });
 
     return this.queueTask("Bower");
