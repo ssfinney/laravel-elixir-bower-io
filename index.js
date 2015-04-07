@@ -1,7 +1,7 @@
-var gulp        	= require('gulp');
-var notify      	= require('gulp-notify');
-var bower  			= require('gulp-bower')
-var elixir          = require('laravel-elixir');
+var gulp        = require('gulp');
+var notify      = require('gulp-notify');
+var bower       = require('gulp-bower');
+var elixir      = require('laravel-elixir');
 
 function notify_message(title, subtitle, message, icon){
     gulp.src('').pipe(notify({
@@ -41,6 +41,6 @@ elixir.extend('Bower', function(options, dest){
             
         });
 
-    this.registerWatcher("Bower");
+    this.registerWatcher("Bower", "bower.json");
     return this.queueTask("Bower");
 });

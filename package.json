@@ -1,6 +1,6 @@
 {
   "name": "laravel-elixir-bower-io",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Laravel Elixir Bower Extension",
   "main": "index.js",
   "scripts": {
