@@ -41,5 +41,6 @@ elixir.extend('Bower', function(options, dest){
             
         });
 
+    this.registerWatcher("Bower");
     return this.queueTask("Bower");
 });
